@@ -12,17 +12,27 @@ function updateView() {
     : console.log("ERROR: Page doesn't exist.")
 }
 
-// Display section
-function displaySection(sectionOne, sectionTwo) {
-    if (sectionOne.style.display === "none") {
-        sectionOne.style.display = "block"
-        sectionTwo.style.display = "none"
+// Display posts section
+function displaySection1() {
+    if (postsSection.style.display === "none") {
+        postsSection.style.display = "block"
+        aboutSection.style.display = "none"
+        return 
+    }
+}
+
+// Display about section
+function displaySection2() {
+    if (aboutSection.style.display === "none") {
+        aboutSection.style.display = "block"
+        postsSection.style.display = "none"
+        return 
     }
 }
 
 // Username
 function username(inputName) {
-    if (localStorage.account) {
+    if (localStorage["account"]) {
         const account = JSON.parse(localStorage.getItem("account"))
 
         if (inputName === account.name) {
@@ -35,7 +45,7 @@ function username(inputName) {
 
 // Password
 function password(inputPassword) {
-    if (localStorage.account) {
+    if (localStorage["account"]) {
         const account = JSON.parse(localStorage.getItem("account"))
 
         if (inputPassword === account.password) {
@@ -52,7 +62,7 @@ function loginAccount() {
         login = true
 
         if (login) {
-            return location.href = "home-page.html"
+            return location.pathname = "/home-page.html"
         }
     }
 
@@ -66,8 +76,7 @@ function createUsername(newInputName) {
         return console.log("Empty name is not valid.")
     }
     
-    user.name = newInputName
-    return console.log(user)
+    return user.name = newInputName
 }
 
 // Create password
@@ -76,9 +85,8 @@ function createPassword(newInputPassword) {
         delete user.password
         return console.log("Empty password is not valid.")
     }
-
-    user.password = newInputPassword
-    return console.log(user)
+    
+    return user.password = newInputPassword
 }
 
 // Register account
@@ -88,13 +96,13 @@ function registerAccount() {
 
         if (register) {
             newAccount()
-            const myJSON = JSON.stringify(user)
-            localStorage.setItem("account", myJSON)
-            return location.href = "index.html"
+            localStorage.setItem("account", JSON.stringify(user))
+            return location.pathname = "/index.html"
         }
     }
 }
 
+// Clearing old data
 function newAccount() {
     return localStorage.clear()
 }
@@ -105,8 +113,21 @@ function profileName() {
     return account.name
 }
 
+// Switch bio display
+function switchBioDisplay() {
+    if (bioContent.style.display === "none") {
+        bioBtn.style.display = "none"
+        bioContent.style.display = "block"
+        return
+    }
+
+    bioContent.style.display = "none"
+    bioBtn.style.display = "block"
+    return
+}
+
 // Save bio input
-function saveBio(textInput) {
+function saveBioInput(textInput) {
     return localStorage.setItem("bio", JSON.stringify(textInput))
 }
 
@@ -117,17 +138,6 @@ function bio() {
     }
 
     return JSON.parse(localStorage.getItem("bio"))
-}
-
-// Edit bio
-function editBio() {
-    if (bioContent.style.display === "none") {
-        bioBtn.style.display = "none"
-        return bioContent.style.display = "block"
-    }
-
-    bioContent.style.display = "none"
-    return bioBtn.style.display = "block"
 }
 
 // Change input

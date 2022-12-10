@@ -115,11 +115,11 @@ function profilePageView() {
 
 
             <div class="nav-section">
-                <div class="nav-posts" onclick="displaySection(postsSection, aboutSection)">
+                <div class="nav-posts" onclick="displaySection1()">
                     <span>Posts</span>
                 </div>
 
-                <div class="nav-about" onclick="displaySection(aboutSection, postsSection)">
+                <div class="nav-about" onclick="displaySection2()">
                     <span>About</span>
                 </div>
             </div>
@@ -157,13 +157,13 @@ function profilePageView() {
 
             <div id="aboutSection" style="display:none">
 
-                <div id="bioBtn" onclick="editBio()">
+                <div id="bioBtn" onclick="switchBioDisplay()">
                     <span>Bio</span>
                 </div>
 
                 <div id="bioContent" style="display:none">
-                    <i class="fa-sharp fa-solid fa-circle-arrow-left" onclick="editBio()"></i>
-                    <textarea class="bio-text-area" maxlength="100" placeholder="Describe yourself" onfocusout="saveBio(this.value)">${bio()}</textarea>
+                    <i class="fa-sharp fa-solid fa-circle-arrow-left" onclick="switchBioDisplay()"></i>
+                    <textarea class="bio-text-area" maxlength="100" placeholder="Describe yourself" onfocusout="saveBioInput(this.value)">${bio()}</textarea>
                 </div>
 
 
