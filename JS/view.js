@@ -12,8 +12,8 @@ function loginView() {
         <div class="login-section">
 
             <div class="input-section">
-                <input type="text" placeholder="Username" onchange="username(this.value)">
-                <input type="password" placeholder="Password" onchange="password(this.value)">
+                <input type="text" placeholder="Username" onchange="loginUsername(this.value)">
+                <input type="password" placeholder="Password" onchange="loginPassword(this.value)">
             </div>
 
             <div class="login-btn-section">
@@ -84,7 +84,7 @@ function homePageView() {
             <div class="left-section">
 
                 <div class="my-profile" onclick="location.pathname='/profile-page.html'">
-                    <img class="pfp-small" src="images/blank-pfp.jpg"><span>${profileName()}</span>
+                    <img class="pfp-small" src="images/blank-pfp.jpg"><span>${profileUsername()}</span>
                 </div>
 
             </div>
@@ -109,7 +109,7 @@ function profilePageView() {
 
             <div class="profile-section-large">
                 <img class="pfp-large" src="images/blank-pfp.jpg">
-                <h1>${profileName()}</h1>
+                <h1>${profileUsername()}</h1>
             </div>
 
 
@@ -132,7 +132,7 @@ function profilePageView() {
 
                     <div class="profile-section-small">
                         <img class="pfp-small" src="images/blank-pfp.jpg">
-                        <span>${profileName()}</span>
+                        <span>${profileUsername()}</span>
                     </div>
 
 

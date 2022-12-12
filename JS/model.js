@@ -1,20 +1,17 @@
-const app = document.getElementById("app")
+const create_account = {
+    username: "",
+    password: "",
+    register: false
+}
 
-const user = {}
-let register = false
-let loginUsername = false
-let loginPassword = false
-let login = false
+const account_login = {
+    username: false,
+    password: false,
+    login: false
+}
 
-// ID's
-const postsSection = document.getElementById("postsSection")
-const textArea = document.getElementById("textArea")
-const aboutSection = document.getElementById("aboutSection")
-const bioBtn = document.getElementById("bioBtn")
-const bioContent = document.getElementById("bioContent")
+const inProgress = document.getElementsByClassName("in-progress") // Temporary class for in progress message
 
-// Classes
-const inProgress = document.getElementsByClassName("in-progress")
 const inputInfo = document.getElementsByClassName("input-info")
 const outputInfo = document.getElementsByClassName("output-info")
 const penIcon = document.getElementsByClassName("fa-solid fa-pen")

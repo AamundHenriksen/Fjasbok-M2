@@ -31,37 +31,37 @@ function displaySection2() {
 }
 
 // Username
-function username(inputName) {
-    if (localStorage["account"]) {
-        const account = JSON.parse(localStorage.getItem("account"))
+function loginUsername(inputUsername) {
+    if (localStorage["account_username"]) {
+        const account_username = JSON.parse(localStorage.getItem("account_username"))
 
-        if (inputName === account.name) {
-            return loginUsername = true
+        if (inputUsername === account_username) {
+            return account_login.username = true
         }
     }
 
-    return loginUsername = false
+    return account_login.username = false
 }
 
 // Password
-function password(inputPassword) {
-    if (localStorage["account"]) {
-        const account = JSON.parse(localStorage.getItem("account"))
+function loginPassword(inputPassword) {
+    if (localStorage["account_password"]) {
+        const account_password = JSON.parse(localStorage.getItem("account_password"))
 
-        if (inputPassword === account.password) {
-            return loginPassword = true
+        if (inputPassword === account_password) {
+            return account_login.password = true
         }
     }
 
-    return loginPassword = false
+    return account_login.password = false
 }
 
 // Login
 function loginAccount() {
-    if (loginUsername && loginPassword) {
-        login = true
+    if (account_login.username && account_login.password) {
+        account_login.login = true
 
-        if (login) {
+        if (account_login.login) {
             return location.pathname = "/home-page.html"
         }
     }
@@ -70,47 +70,48 @@ function loginAccount() {
 }
 
 // Create username
-function createUsername(newInputName) {
-    if (!newInputName) {
-        delete user.name
+function createUsername(inputUsername) {
+    if (!inputUsername) {
+        delete create_account.username
         return console.log("Empty name is not valid.")
     }
     
-    return user.name = newInputName
+    return create_account.username = inputUsername
 }
 
 // Create password
-function createPassword(newInputPassword) {
-    if (!newInputPassword) {
-        delete user.password
+function createPassword(inputPassword) {
+    if (!inputPassword) {
+        delete create_account.password
         return console.log("Empty password is not valid.")
     }
     
-    return user.password = newInputPassword
+    return create_account.password = inputPassword
 }
 
 // Register account
 function registerAccount() {
-    if (user.name && user.password) {
-        register = true
+    if (create_account.username && create_account.password) {
+        create_account.register = true
 
-        if (register) {
-            newAccount()
-            localStorage.setItem("account", JSON.stringify(user))
+        if (create_account.register) {
+            clearOldData()
+            localStorage.setItem("account_username", JSON.stringify(create_account.username))
+            localStorage.setItem("account_password", JSON.stringify(create_account.password))
             return location.pathname = "/index.html"
         }
     }
 }
 
-// Clearing old data
-function newAccount() {
+// Clears old data
+function clearOldData() {
     return localStorage.clear()
 }
 
-// Profile name
-function profileName() {
-    const account = JSON.parse(localStorage.getItem("account"))
-    return account.name
+// Profile username
+function profileUsername() {
+    const account_username = JSON.parse(localStorage.getItem("account_username"))
+    return account_username
 }
 
 // Switch bio display
@@ -127,8 +128,8 @@ function switchBioDisplay() {
 }
 
 // Save bio input
-function saveBioInput(textInput) {
-    return localStorage.setItem("bio", JSON.stringify(textInput))
+function saveBioInput(inputText) {
+    return localStorage.setItem("bio", JSON.stringify(inputText))
 }
 
 // Bio
