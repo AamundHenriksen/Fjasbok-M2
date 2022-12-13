@@ -10,7 +10,7 @@ const account_login = {
     login: false
 }
 
-const inProgress = document.getElementsByClassName("in-progress") // Temporary class for in progress message
+const postsArr = []
 
 const inputInfo = document.getElementsByClassName("input-info")
 const outputInfo = document.getElementsByClassName("output-info")

@@ -234,11 +234,6 @@ function workplace() {
     return JSON.parse(localStorage.getItem("workplace"))
 }
 
-// In progress message :D
-function inProgressMessage() {
-    return document.getElementsByClassName("in-progress")[0].style.display = "inline"
-}
-
 // Drop down menu
 function dropdownMenu() {
     if (dropdownSection.style.display === "block") {
@@ -253,6 +248,28 @@ function logoutAccount() {
     location.replace("/index.html")
 }
 
+// Publish post
+function publishPost() {
+    if (!textArea.value) { return }
+
+    postsArr.push(textArea.value)
+    textArea.value = ""
+
+    let myPosts = ""
+    for (let i = 0; i < postsArr.length; i++) {
+        myPosts += `
+        <div class="published-posts" onclick="deletePost(this, this.innerHTML)">${postsArr[i]}</div>
+        `
+    }
+
+    publishedPostsSection.innerHTML = myPosts
+}
+
+// Delete post
+function deletePost(element, post) {
+    element.remove()
+    postsArr.splice(postsArr.indexOf(post), 1)
+}
 
 
 

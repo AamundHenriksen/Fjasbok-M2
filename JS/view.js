@@ -170,12 +170,14 @@ function profilePageView() {
 
 
                     <div class="publish-post-section">
-                        <input class="publish-btn" type="submit" value="Publish" onclick="inProgressMessage()">
+                        <input class="publish-btn" type="submit" onclick="publishPost()" value="Publish">
                     </div>
 
-                </div>
 
-                <span class="in-progress" style="display:none">In progress... 😄</span>
+
+                    <div id="publishedPostsSection"></div>
+
+                </div>
 
             </div>
 
