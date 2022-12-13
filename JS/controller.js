@@ -62,7 +62,7 @@ function loginAccount() {
         account_login.login = true
 
         if (account_login.login) {
-            return location.pathname = "/home-page.html"
+            return location.replace("/home-page.html")
         }
     }
 
@@ -98,7 +98,8 @@ function registerAccount() {
             clearOldData()
             localStorage.setItem("account_username", JSON.stringify(create_account.username))
             localStorage.setItem("account_password", JSON.stringify(create_account.password))
-            return location.pathname = "/index.html"
+
+            return location.replace("/index.html")
         }
     }
 }
@@ -237,6 +238,24 @@ function workplace() {
 function inProgressMessage() {
     return document.getElementsByClassName("in-progress")[0].style.display = "inline"
 }
+
+// Drop down menu
+function dropdownMenu() {
+    if (dropdownSection.style.display === "block") {
+        return dropdownSection.style.display = "none" 
+    }
+
+    dropdownSection.style.display = "block"
+}
+
+// Logout
+function logoutAccount() {
+    location.replace("/index.html")
+}
+
+
+
+
 
 
 

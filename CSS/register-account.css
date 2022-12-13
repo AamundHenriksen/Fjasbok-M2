@@ -44,6 +44,14 @@ h2 {
     font-size: 19px;
 }
 
+i.fa-sharp.fa-solid.fa-xmark {
+    position: absolute;
+    margin-left: 370px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(107, 107, 107);
+}
+
 .input-section {
     display: flex;
     flex-direction: column;
@@ -84,6 +92,7 @@ button {
     font-weight: 600;
     font-size: 23px;
     border: 0;
+    cursor: pointer;
 }
 
 button:hover {

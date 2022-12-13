@@ -18,11 +18,11 @@ function loginView() {
 
             <div class="login-btn-section">
                 <button onclick="loginAccount()">Login</button>
-                <a href="forgot-password.html">Forgot password?</a>
+                <a onclick="console.log('In progress... 😄')">Forgot password?</a>
             </div>
 
-            <div class="new-account-btn-section">
-                <a class="new-account-btn" href="register-account.html">Create new account</a>
+            <div class="create-account-section">
+                <button class="create-account-btn" onclick="location.replace('register-account.html')">Create new account</button>
             </div>
 
         </div>
@@ -47,6 +47,7 @@ function registerView() {
             <div class="heading-section">
                 <h1>Register</h1>
                 <h2>It's quick and easy.</h2>
+                <i class="fa-sharp fa-solid fa-xmark" onclick="location.replace('/index.html')"></i>
             </div>
 
 
@@ -76,15 +77,28 @@ function homePageView() {
 
     html += `
         <header>
-            <h1 class="logo" onclick="location.pathname='/home-page.html'">h</h1>
+
+            <h1 class="logo" onclick="location.replace('/home-page.html')">h</h1>
+            <img class="pfp-header" onclick="dropdownMenu()" src="images/blank-pfp.jpg">
+
+            <div id="dropdownSection" style="display:none">
+
+                <div class="logout-section" onclick="logoutAccount()">
+                    <i class="fa-solid fa-door-open"></i>
+                    <span>Logout</span>
+                </div>
+
+            </div>
+
         </header>
 
         <div class="container">
 
             <div class="left-section">
 
-                <div class="my-profile" onclick="location.pathname='/profile-page.html'">
-                    <img class="pfp-small" src="images/blank-pfp.jpg"><span>${profileUsername()}</span>
+                <div class="my-profile" onclick="location.replace('/profile-page.html')">
+                    <img class="pfp-small" src="images/blank-pfp.jpg">
+                    <span>${profileUsername()}</span>
                 </div>
 
             </div>
@@ -101,7 +115,19 @@ function profilePageView() {
 
     html += `
         <header>
-            <h1 class="logo" onclick="location.pathname='/home-page.html'">h</h1>
+
+            <h1 class="logo" onclick="location.replace('/home-page.html')">h</h1>
+            <img class="pfp-header" onclick="dropdownMenu()" src="images/blank-pfp.jpg">
+
+            <div id="dropdownSection" style="display:none">
+
+                <div class="logout-section" onclick="logoutAccount()">
+                    <i class="fa-solid fa-door-open"></i>
+                    <span>Logout</span>
+                </div>
+
+            </div>
+
         </header>
 
         <div class="container">
