@@ -12,6 +12,9 @@ const account_login = {
 
 const postsArr = []
 
+const publishedPosts = document.getElementsByClassName("published-posts")
+const deleteIcon = document.getElementsByClassName("fa-solid fa-trash-can")
+
 const inputInfo = document.getElementsByClassName("input-info")
 const outputInfo = document.getElementsByClassName("output-info")
-const penIcon = document.getElementsByClassName("fa-solid fa-pen")
+const editIcon = document.getElementsByClassName("fa-solid fa-pen")

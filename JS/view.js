@@ -203,7 +203,7 @@ function profilePageView() {
                         <span>Place of residence:</span>
                         <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${placeOfResidence()}" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${placeOfResidence()}</span>
-                        <i class="fa-solid fa-pen" onclick="editingPen(this)"></i>
+                        <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                     <div class="profile-info">
@@ -211,7 +211,7 @@ function profilePageView() {
                         <span>From</span>
                         <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${from()}" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${from()}</span>
-                        <i class="fa-solid fa-pen" onclick="editingPen(this)"></i>
+                        <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                     <div class="profile-info">
@@ -219,7 +219,7 @@ function profilePageView() {
                         <span>University/College:</span>
                         <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${universityCollege()}" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${universityCollege()}</span>
-                        <i class="fa-solid fa-pen" onclick="editingPen(this)"></i>
+                        <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                     <div class="profile-info">
@@ -227,7 +227,7 @@ function profilePageView() {
                         <span>Workplace:</span>
                         <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${workplace()}" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${workplace()}</span>
-                        <i class="fa-solid fa-pen" onclick="editingPen(this)"></i>
+                        <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                 </div>

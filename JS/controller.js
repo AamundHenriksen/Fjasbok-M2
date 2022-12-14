@@ -176,11 +176,12 @@ function saveInput(inputField, inputValue) {
     }
 }
 
-// Editing pen
-function editingPen(penElement) {
-    for (let i = 0; i < penIcon.length; i++) {
+// Edit info
+function editInfo(edit) {
+    for (let i = 0; i < editIcon.length; i++) {
 
-        if (penElement === penIcon[i]) {
+        if (edit === editIcon[i]) {
+            console.log(true)
 
             if (inputInfo[i].style.display === "block") {
 
@@ -252,50 +253,31 @@ function logoutAccount() {
 function publishPost() {
     if (!textArea.value) { return }
 
-    postsArr.push(textArea.value)
-    textArea.value = ""
+        postsArr.push(textArea.value)
+        textArea.value = ""
+    
+        let myPosts = ""
+        for (let i = postsArr.length - 1; i >= 0; i--) {
+            myPosts += `
+            <div class="published-posts">
+                <div>${postsArr[i]}</div>
+                <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+            </div>
+            `
+        }
+    
+        publishedPostsSection.innerHTML = myPosts
+        return 
+}
 
-    let myPosts = ""
-    for (let i = 0; i < postsArr.length; i++) {
-        myPosts += `
-        <div class="published-posts" onclick="deletePost(this, this.innerHTML)">${postsArr[i]}</div>
-        `
+function deletePost(post) {
+    for (let i = deleteIcon.length; i >= 0; i--) {
+
+        if (post === deleteIcon[i]) {
+            postsArr.reverse().splice([i], 1)
+            postsArr.reverse()
+            publishedPosts[i].remove()
+            return 
+        }
     }
-
-    publishedPostsSection.innerHTML = myPosts
 }
-
-// Delete post
-function deletePost(element, post) {
-    element.remove()
-    postsArr.splice(postsArr.indexOf(post), 1)
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
