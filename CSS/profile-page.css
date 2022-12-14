@@ -139,9 +139,9 @@ h1 {
 
 
 
+
 /* POSTS SECTION */
 #postsSection {
-    background: #fff;
     width: 470px;
     margin-top: 15px;
     border-radius: 9px;
@@ -154,6 +154,7 @@ h1 {
     border-radius: 9px;
     padding: 10px 25px;
     box-sizing: border-box;
+    background: #fff;
 }
 
 .profile-section-small {
@@ -222,10 +223,54 @@ h1 {
     color: rgb(243, 243, 243);
 }
 
-.in-progress {
+#publishedPostsSection {
+    margin-top: 15px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 9px;
+}
+.published-posts {
+    border-radius: 9px;
+    border: 1px solid rgb(197, 197, 197);
+    padding: 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.top-section {
     display: flex;
-    justify-content: end;
-    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+    word-break: break-word;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding-bottom: 5px;
+}
+
+i.fa-solid.fa-trash-can {
+    font-size: 16px;
+    color: rgb(117, 117, 117);
+    cursor: pointer;
+    margin: 0;
+}
+
+.bottom-section {
+    padding-top: 10px;
+}
+
+.comment-section {
+    background: #f0f2f5;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.comment-field {
+    outline: 0;
+    border: 0;
+    background: #f0f2f5;
+    padding: 10px;
+    border-radius: 50px;
     font-size: 15px;
 }
 

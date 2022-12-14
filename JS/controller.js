@@ -260,14 +260,24 @@ function publishPost() {
         for (let i = postsArr.length - 1; i >= 0; i--) {
             myPosts += `
             <div class="published-posts">
-                <div>${postsArr[i]}</div>
-                <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+
+                <div class="top-section">
+                    <div>${postsArr[i]}</div>
+                    <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                </div>
+
+                <div class="bottom-section">
+                    <div class="comment-section" style="display:none"></div>
+                    <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)">
+                </div>
+
             </div>
             `
         }
-    
+
         publishedPostsSection.innerHTML = myPosts
-        return 
+        publishedPostsSection.style.display = "block"
+        return
 }
 
 function deletePost(post) {
@@ -277,6 +287,19 @@ function deletePost(post) {
             postsArr.reverse().splice([i], 1)
             postsArr.reverse()
             publishedPosts[i].remove()
+        }
+    }
+
+    if (postsArr.length === 0) { return publishedPostsSection.style.display = "none"}
+}
+
+function commentPost(commentFieldIndex) {
+    for (let i = 0; i < commentField.length; i++) {
+
+        if (commentFieldIndex === commentField[i]) {
+            commentSection[i].style.display = "block"
+            commentSection[i].innerHTML = commentField[i].value
+            commentField[i].value = ""
             return 
         }
     }

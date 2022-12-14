@@ -164,7 +164,7 @@ function profilePageView() {
 
 
                     <div class="text-area-section">
-                        <textarea id="textArea" placeholder="What are you thinking about?" maxlength="300" rows="4" cols="28"></textarea>
+                        <textarea id="textArea" placeholder="What are you thinking about?" maxlength="500" rows="4" cols="28"></textarea>
                     </div>
 
 
@@ -173,11 +173,9 @@ function profilePageView() {
                         <input class="publish-btn" type="submit" onclick="publishPost()" value="Publish">
                     </div>
 
-
-
-                    <div id="publishedPostsSection"></div>
-
                 </div>
+
+                <div id="publishedPostsSection" style="display:none"></div>
 
             </div>
 

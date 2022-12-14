@@ -18,3 +18,6 @@ const deleteIcon = document.getElementsByClassName("fa-solid fa-trash-can")
 const inputInfo = document.getElementsByClassName("input-info")
 const outputInfo = document.getElementsByClassName("output-info")
 const editIcon = document.getElementsByClassName("fa-solid fa-pen")
+
+const commentSection = document.getElementsByClassName("comment-section")
+const commentField = document.getElementsByClassName("comment-field")
