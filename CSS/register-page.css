@@ -1,16 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
+.register-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     background: #f0f2f5;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
 }
 
 .register-section {
@@ -20,9 +13,10 @@
     border-radius: 9px;
     padding: 20px;
     width: 390px;
+    margin-top: 60px;
 }
 
-.heading-section {
+.register-heading-section {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -31,13 +25,13 @@
     margin-bottom: 20px;
 }
 
-h1 {
+.register-h1 {
     color: #000;
     font-size: 42px;
     font-weight: 600;
 }
 
-h2 {
+.register-motto {
     color: rgb(155, 155, 155);
     font-weight: 400;
     line-height: 30px;
@@ -52,13 +46,13 @@ i.fa-sharp.fa-solid.fa-xmark {
     color: rgb(107, 107, 107);
 }
 
-.input-section {
+.register-input-section {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-input[type=text], input[type=password] {
+.register-input {
     border: 1px solid #e6e6e6;
     padding: 15px;
     margin-bottom: 9px;
@@ -69,21 +63,21 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-input[type=text]::placeholder, input[type=password]::placeholder {
+.register-input::placeholder {
     color: #b1b1b1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.register-input:focus {
     outline: none;
 }
 
-.btn-section {
+.register-btn-section {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
-button {
+.register-btn {
     color: #fff;
     background: #42b72a;
     width: 175px;
@@ -95,17 +89,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.register-btn:hover {
     background: #3dac27;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-.copyright {
-    color: grey;
-    font-size: 13px;
 }

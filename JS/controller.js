@@ -1,13 +1,33 @@
+function loginPage() {
+    model.currentPage = "login"
+    updateView()
+}
+
+function registerPage() {
+    model.currentPage = "register"
+    updateView()
+}
+
+function homePage() {
+    model.currentPage = "home"
+    updateView()
+}
+
+function profilePage() {
+    model.currentPage = "profile"
+    updateView()
+}
+
 // Updates view
 updateView()
 function updateView() {
-    location.pathname === "/Henriksenbook/index.html" ? loginView()
+    model.currentPage === "login" ? loginView()
+    
+    : model.currentPage === "register" ? registerView()
 
-    : location.pathname === "/Henriksenbook/register-account.html" ? registerView()
+    : model.currentPage === "home" ? homePageView()
 
-    : location.pathname === "/Henriksenbook/home-page.html" ? homePageView()
-
-    : location.pathname === "/Henriksenbook/profile-page.html" ? profilePageView()
+    : model.currentPage === "profile" ? profilePageView()
     
     : console.log("ERROR: Page doesn't exist.")
 }
@@ -36,11 +56,11 @@ function loginUsername(inputUsername) {
         const account_username = JSON.parse(localStorage.getItem("account_username"))
 
         if (inputUsername === account_username) {
-            return account_login.username = true
+            return model.account_login.username = true
         }
     }
 
-    return account_login.username = false
+    return model.account_login.username = false
 }
 
 // Password
@@ -49,20 +69,20 @@ function loginPassword(inputPassword) {
         const account_password = JSON.parse(localStorage.getItem("account_password"))
 
         if (inputPassword === account_password) {
-            return account_login.password = true
+            return model.account_login.password = true
         }
     }
 
-    return account_login.password = false
+    return model.account_login.password = false
 }
 
 // Login
 function loginAccount() {
-    if (account_login.username && account_login.password) {
-        account_login.login = true
+    if (model.account_login.username && model.account_login.password) {
+        model.account_login.login = true
 
-        if (account_login.login) {
-            return location.replace("/home-page.html")
+        if (model.account_login.login) {
+            return homePage()
         }
     }
 
@@ -72,39 +92,39 @@ function loginAccount() {
 // Create username
 function createUsername(inputUsername) {
     if (!inputUsername) {
-        delete create_account.username
+        delete model.create_account.username
         return console.log("Empty name is not valid.")
     }
     
-    return create_account.username = inputUsername
+    return model.create_account.username = inputUsername
 }
 
 // Create password
 function createPassword(inputPassword) {
     if (!inputPassword) {
-        delete create_account.password
+        delete model.create_account.password
         return console.log("Empty password is not valid.")
     }
     
-    return create_account.password = inputPassword
+    return model.create_account.password = inputPassword
 }
 
 // Register account
 function registerAccount() {
-    if (create_account.username && create_account.password) {
-        create_account.register = true
+    if (model.create_account.username && model.create_account.password) {
+        model.create_account.register = true
 
-        if (create_account.register) {
+        if (model.create_account.register) {
             clearOldData()
-            localStorage.setItem("account_username", JSON.stringify(create_account.username))
-            localStorage.setItem("account_password", JSON.stringify(create_account.password))
+            localStorage.setItem("account_username", JSON.stringify(model.create_account.username))
+            localStorage.setItem("account_password", JSON.stringify(model.create_account.password))
 
-            return location.replace("/index.html")
+            return loginPage()
         }
     }
 }
 
-// Clears old data
+// Clear old data
 function clearOldData() {
     return localStorage.clear()
 }
@@ -246,23 +266,24 @@ function dropdownMenu() {
 
 // Logout
 function logoutAccount() {
-    location.replace("/index.html")
+    model.currentPage = "login"
+    updateView()
 }
 
 // Publish post
 function publishPost() {
     if (!textArea.value) { return }
 
-        postsArr.push(textArea.value)
+        model.postsArr.push(textArea.value)
         textArea.value = ""
     
         let myPosts = ""
-        for (let i = postsArr.length - 1; i >= 0; i--) {
+        for (let i = model.postsArr.length - 1; i >= 0; i--) {
             myPosts += `
-            <div class="published-posts">
+            <div class="published-post">
 
                 <div class="top-section">
-                    <div>${postsArr[i]}</div>
+                    <div>${model.postsArr[i]}</div>
                     <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
                 </div>
 
@@ -275,8 +296,8 @@ function publishPost() {
             `
         }
 
-        publishedPostsSection.innerHTML = myPosts
-        publishedPostsSection.style.display = "block"
+        publishedPostSection.innerHTML = myPosts
+        publishedPostSection.style.display = "block"
         return
 }
 
@@ -284,13 +305,13 @@ function deletePost(post) {
     for (let i = deleteIcon.length; i >= 0; i--) {
 
         if (post === deleteIcon[i]) {
-            postsArr.reverse().splice([i], 1)
-            postsArr.reverse()
-            publishedPosts[i].remove()
+            model.postsArr.reverse().splice([i], 1)
+            model.postsArr.reverse()
+            publishedPost[i].remove()
         }
     }
 
-    if (postsArr.length === 0) { return publishedPostsSection.style.display = "none"}
+    if (model.postsArr.length === 0) { return publishedPostSection.style.display = "none"}
 }
 
 function commentPost(commentFieldIndex) {

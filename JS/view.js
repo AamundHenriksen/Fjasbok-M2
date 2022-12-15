@@ -2,27 +2,27 @@ function loginView() {
     let html = ""
 
     html += `
-    <div class="container">
+    <div class="login-container">
 
-        <div class="heading-section">
-            <h1>Henriksenbook</h1>
-            <h2>Henriksenbook helps you stay in touch and share experiences with the people in your life.</h2>
+        <div class="login-heading-section">
+            <h1 class="henriksenbook-h1">Henriksenbook</h1>
+            <h2 class="login-motto">Henriksenbook helps you stay in touch and share experiences with the people in your life.</h2>
         </div>
 
         <div class="login-section">
 
-            <div class="input-section">
-                <input type="text" placeholder="Username" onchange="loginUsername(this.value)">
-                <input type="password" placeholder="Password" onchange="loginPassword(this.value)">
+            <div class="login-input-section">
+                <input class="login-input" type="text" placeholder="Username" onchange="loginUsername(this.value)">
+                <input class="login-input" type="password" placeholder="Password" onchange="loginPassword(this.value)">
             </div>
 
             <div class="login-btn-section">
-                <button onclick="loginAccount()">Login</button>
+                <button class="login-btn" onclick="loginAccount()">Login</button>
                 <a onclick="console.log('In progress... 😄')">Forgot password?</a>
             </div>
 
             <div class="create-account-section">
-                <button class="create-account-btn" onclick="location.replace('register-account.html')">Create new account</button>
+                <button class="create-account-btn" onclick="registerPage()">Create new account</button>
             </div>
 
         </div>
@@ -40,25 +40,25 @@ function registerView() {
     let html = ""
 
     html += `
-    <div class="container">
+    <div class="register-container">
 
         <div class="register-section">
 
-            <div class="heading-section">
-                <h1>Register</h1>
-                <h2>It's quick and easy.</h2>
-                <i class="fa-sharp fa-solid fa-xmark" onclick="location.replace('/index.html')"></i>
+            <div class="register-heading-section">
+                <h1 class="register-h1">Register</h1>
+                <h2 class="register-motto">It's quick and easy.</h2>
+                <i class="fa-sharp fa-solid fa-xmark" onclick="loginPage()"></i>
             </div>
 
 
 
-            <div class="input-section">
-                <input type="text" maxlength="35" placeholder="Choose username" onchange="createUsername(this.value)">
-                <input type="password" maxlength="55" placeholder="Choose password" onchange="createPassword(this.value)">
+            <div class="register-input-section">
+                <input class="register-input" type="text" maxlength="35" placeholder="Choose username" onchange="createUsername(this.value)">
+                <input class="register-input" type="password" maxlength="55" placeholder="Choose password" onchange="createPassword(this.value)">
             </div>
 
-            <div class="btn-section">
-                <button onclick="registerAccount()">Register</button>
+            <div class="register-btn-section">
+                <button class="register-btn" onclick="registerAccount()">Register</button>
             </div>
 
         </div>
@@ -78,8 +78,8 @@ function homePageView() {
     html += `
         <header>
 
-            <h1 class="logo" onclick="location.replace('/home-page.html')">h</h1>
-            <img class="pfp-header" onclick="dropdownMenu()" src="images/blank-pfp.jpg">
+            <h1 class="logo" onclick="homePage()">h</h1>
+            <img class="header-pfp" onclick="dropdownMenu()" src="images/blank-pfp.jpg">
 
             <div id="dropdownSection" style="display:none">
 
@@ -92,13 +92,13 @@ function homePageView() {
 
         </header>
 
-        <div class="container">
+        <div class="home-page-container">
 
             <div class="left-section">
 
-                <div class="my-profile" onclick="location.replace('/profile-page.html')">
+                <div class="my-profile" onclick="profilePage()">
                     <img class="pfp-small" src="images/blank-pfp.jpg">
-                    <span>${profileUsername()}</span>
+                    <span class="profile-name-small">${profileUsername()}</span>
                 </div>
 
             </div>
@@ -116,8 +116,8 @@ function profilePageView() {
     html += `
         <header>
 
-            <h1 class="logo" onclick="location.replace('/home-page.html')">h</h1>
-            <img class="pfp-header" onclick="dropdownMenu()" src="images/blank-pfp.jpg">
+            <h1 class="logo" onclick="homePage()">h</h1>
+            <img class="header-pfp" onclick="dropdownMenu()" src="images/blank-pfp.jpg">
 
             <div id="dropdownSection" style="display:none">
 
@@ -130,22 +130,22 @@ function profilePageView() {
 
         </header>
 
-        <div class="container">
+        <div class="profile-page-container">
 
 
             <div class="profile-section-large">
                 <img class="pfp-large" src="images/blank-pfp.jpg">
-                <h1>${profileUsername()}</h1>
+                <h1 class="profile-name-large">${profileUsername()}</h1>
             </div>
 
 
 
-            <div class="nav-section">
-                <div class="nav-posts" onclick="displaySection1()">
+            <div class="profile-nav-section">
+                <div class="profile-nav" onclick="displaySection1()">
                     <span>Posts</span>
                 </div>
 
-                <div class="nav-about" onclick="displaySection2()">
+                <div class="profile-nav" onclick="displaySection2()">
                     <span>About</span>
                 </div>
             </div>
@@ -169,13 +169,13 @@ function profilePageView() {
 
 
 
-                    <div class="publish-post-section">
+                    <div class="publish-btn-section">
                         <input class="publish-btn" type="submit" onclick="publishPost()" value="Publish">
                     </div>
 
                 </div>
 
-                <div id="publishedPostsSection" style="display:none"></div>
+                <div id="publishedPostSection" style="display:none"></div>
 
             </div>
 
