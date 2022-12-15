@@ -20,4 +20,5 @@ const outputInfo = document.getElementsByClassName("output-info")
 const editIcon = document.getElementsByClassName("fa-solid fa-pen")
 
 const commentSection = document.getElementsByClassName("comment-section")
+const comment = document.getElementsByClassName("comment")
 const commentField = document.getElementsByClassName("comment-field")

@@ -254,15 +254,17 @@ i.fa-solid.fa-trash-can {
 }
 
 .bottom-section {
+    display: flex;
+    flex-direction: column;
     padding-top: 10px;
 }
 
-.comment-section {
+.comment {
     background: #f0f2f5;
     width: fit-content;
-    padding: 15px;
+    padding: 15px 15px;
     border-radius: 50px;
-    margin-bottom: 10px;
+    word-break: break-word;
 }
 
 .comment-field {
@@ -272,6 +274,9 @@ i.fa-solid.fa-trash-can {
     padding: 10px;
     border-radius: 50px;
     font-size: 15px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 

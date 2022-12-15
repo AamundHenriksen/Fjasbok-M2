@@ -1,13 +1,13 @@
 // Updates view
 updateView()
 function updateView() {
-    location.pathname === "/index.html" ? loginView()
+    location.pathname === "/Henriksenbook/index.html" ? loginView()
 
-    : location.pathname === "/register-account.html" ? registerView()
+    : location.pathname === "/Henriksenbook/register-account.html" ? registerView()
 
-    : location.pathname === "/home-page.html" ? homePageView()
+    : location.pathname === "/Henriksenbook/home-page.html" ? homePageView()
 
-    : location.pathname === "/profile-page.html" ? profilePageView()
+    : location.pathname === "/Henriksenbook/profile-page.html" ? profilePageView()
     
     : console.log("ERROR: Page doesn't exist.")
 }
@@ -267,8 +267,8 @@ function publishPost() {
                 </div>
 
                 <div class="bottom-section">
-                    <div class="comment-section" style="display:none"></div>
-                    <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)">
+                    <div class="comment" style="display:none"></div>
+                    <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
                 </div>
 
             </div>
@@ -297,8 +297,8 @@ function commentPost(commentFieldIndex) {
     for (let i = 0; i < commentField.length; i++) {
 
         if (commentFieldIndex === commentField[i]) {
-            commentSection[i].style.display = "block"
-            commentSection[i].innerHTML = commentField[i].value
+            comment[i].style.display = "block"
+            comment[i].innerHTML = commentField[i].value
             commentField[i].value = ""
             return 
         }
