@@ -12,8 +12,8 @@ function loginView() {
         <div class="login-section">
 
             <div class="login-input-section">
-                <input class="login-input" type="text" placeholder="Username" onchange="loginUsername(this.value)">
-                <input class="login-input" type="password" placeholder="Password" onchange="loginPassword(this.value)">
+                <input class="login-input" type="text" maxlength="35" placeholder="Username" onchange="loginUsername(this.value)">
+                <input class="login-input" type="password" maxlength="55" placeholder="Password" onchange="loginPassword(this.value)">
             </div>
 
             <div class="login-btn-section">
@@ -189,7 +189,7 @@ function profilePageView() {
 
                 <div id="bioContent" style="display:none">
                     <i class="fa-sharp fa-solid fa-circle-arrow-left" onclick="switchBioDisplay()"></i>
-                    <textarea class="bio-text-area" maxlength="100" placeholder="Describe yourself" onfocusout="saveBioInput(this.value)">${bio()}</textarea>
+                    <textarea class="bio-text-area" maxlength="99" placeholder="Describe yourself" onfocusout="saveBioInput(this.value)">${bio()}</textarea>
                 </div>
 
 
@@ -199,7 +199,7 @@ function profilePageView() {
                     <div class="profile-info">
                         <i class="fa-solid fa-house"></i>
                         <span>Place of residence:</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${placeOfResidence()}" autocomplete="off">
+                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${placeOfResidence()}" maxlength="19" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${placeOfResidence()}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
@@ -207,7 +207,7 @@ function profilePageView() {
                     <div class="profile-info">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>From</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${from()}" autocomplete="off">
+                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${from()}" maxlength="19" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${from()}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
@@ -215,7 +215,7 @@ function profilePageView() {
                     <div class="profile-info">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>University/College:</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${universityCollege()}" autocomplete="off">
+                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${universityCollege()}" maxlength="19" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${universityCollege()}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
@@ -223,7 +223,7 @@ function profilePageView() {
                     <div class="profile-info">
                         <i class="fa-solid fa-briefcase"></i>
                         <span>Workplace:</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${workplace()}" autocomplete="off">
+                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${workplace()}" maxlength="19" autocomplete="off">
                         <span class="output-info" onclick="changeInput(this)">${workplace()}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>

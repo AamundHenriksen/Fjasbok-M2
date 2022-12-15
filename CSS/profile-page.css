@@ -90,18 +90,19 @@ i.fa-solid.fa-door-open {
 .profile-section-large {
     display: flex;
     align-items: center;
-    justify-content: center;
     background: #fff;
     border-radius: 9px 9px 0 0;
     margin-top: 75px;
     width: 470px;
     padding: 15px 0;
     border-bottom: 1px solid rgb(197, 197, 197);
+    word-break: break-word;
 }
 
 .pfp-large {
     width: 145px;
     border-radius: 50%;
+    margin-left: 25px;
     margin-right: 17px;
     border: 2px solid rgb(197, 197, 197);
     box-shadow: 0 0.5px 10px 1px rgb(197, 197, 197);
@@ -109,6 +110,8 @@ i.fa-solid.fa-door-open {
 
 .profile-name-large {
     font-size: 30px;
+    text-align: center;
+    margin-right: 17px;
 }
 
 .profile-nav-section {

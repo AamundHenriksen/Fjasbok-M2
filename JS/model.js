@@ -20,7 +20,6 @@ const model = {
 const publishedPost = document.getElementsByClassName("published-post")
 const deleteIcon = document.getElementsByClassName("fa-solid fa-trash-can")
 
-const commentSection = document.getElementsByClassName("comment-section")
 const comment = document.getElementsByClassName("comment")
 const commentField = document.getElementsByClassName("comment-field")
 

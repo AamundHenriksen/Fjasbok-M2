@@ -1,6 +1,7 @@
 function loginPage() {
     model.currentPage = "login"
     updateView()
+    location.reload()
 }
 
 function registerPage() {
@@ -267,12 +268,14 @@ function dropdownMenu() {
 function logoutAccount() {
     model.currentPage = "login"
     updateView()
+    location.reload()
 }
 
 // Publish post
 function publishPost() {
     if (!textArea.value) { return }
 
+    if (!localStorage["account_posts_arr"]) {
         model.postsArr.push(textArea.value)
         textArea.value = ""
     
@@ -297,20 +300,54 @@ function publishPost() {
 
         publishedPostSection.innerHTML = myPosts
         publishedPostSection.style.display = "block"
+        localStorage.setItem("account_posts_arr", JSON.stringify(model.postsArr))
+        return 
+    } 
+
+        const accountPostsArr = JSON.parse(localStorage.getItem("account_posts_arr"))
+        accountPostsArr.push(textArea.value)
+        textArea.value = ""
+
+        let myPosts = ""
+        for (let i = accountPostsArr.length - 1; i >= 0; i--) {
+            myPosts += `
+            <div class="published-post">
+
+                <div class="top-section">
+                    <div>${accountPostsArr[i]}</div>
+                    <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                </div>
+
+                <div class="bottom-section">
+                    <div class="comment" style="display:none"></div>
+                    <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
+                </div>
+
+            </div>
+            `
+        }
+
+        publishedPostSection.innerHTML = myPosts
+        publishedPostSection.style.display = "block"
+        localStorage.setItem("account_posts_arr", JSON.stringify(accountPostsArr))
         return
+    
 }
 
 function deletePost(post) {
+    const accountPostsArr = JSON.parse(localStorage.getItem("account_posts_arr"))
+
     for (let i = deleteIcon.length; i >= 0; i--) {
 
         if (post === deleteIcon[i]) {
-            model.postsArr.reverse().splice([i], 1)
-            model.postsArr.reverse()
+            accountPostsArr.reverse().splice([i], 1)
+            accountPostsArr.reverse()
+            localStorage.setItem("account_posts_arr", JSON.stringify(accountPostsArr))
             publishedPost[i].remove()
         }
     }
 
-    if (model.postsArr.length === 0) { return publishedPostSection.style.display = "none"}
+    if (accountPostsArr.length === 0) { return publishedPostSection.style.display = "none"}
 }
 
 function commentPost(commentFieldIndex) {
