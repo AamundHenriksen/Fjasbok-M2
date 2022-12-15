@@ -4,6 +4,134 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.login-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #f0f2f5;
+    padding-bottom: 60px;
+}
+
+.login-heading-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 30px 0;
+}
+
+.henriksenbook-h1 {
+    color: #1877f2;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.login-motto {
+    color: #000;
+    font-weight: 400;
+    text-align: center;
+    width: 440px;
+    line-height: 30px;
+    font-size: 26px;
+}
+
+.login-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    background: #fff;
+    border-radius: 9px;
+    padding: 15px;
+}
+
+.login-input-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login-input {
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    margin-bottom: 9px;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+.login-input::placeholder {
+    color: #b1b1b1;
+}
+
+.login-input:focus {
+    outline: none;
+    border: 1px solid #1877f2;
+}
+
+.login-btn-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.login-btn {
+    font-size: 23px;
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+    background: #1877f2;
+    padding: 5px 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.login-btn:hover {
+    background: #1670e6;
+}
+
+a {
+    color:#1877f2;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.create-account-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.create-account-btn {
+    color: #fff;
+    background: #42b72a;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    height: fit-content;
+    width: 60%;
+    border: 0;
+}
+
+.create-account-btn:hover {
+    background: #3dac27;
+    text-decoration: none;
+}
+
 footer {
     display: flex;
     justify-content: center;

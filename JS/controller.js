@@ -18,7 +18,7 @@ function profilePage() {
     updateView()
 }
 
-// Updates view
+// Update view
 updateView()
 function updateView() {
     model.currentPage === "login" ? loginView()
@@ -201,7 +201,6 @@ function editInfo(edit) {
     for (let i = 0; i < editIcon.length; i++) {
 
         if (edit === editIcon[i]) {
-            console.log(true)
 
             if (inputInfo[i].style.display === "block") {
 
