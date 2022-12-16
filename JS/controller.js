@@ -285,12 +285,22 @@ function publishPost() {
             <div class="published-post">
 
                 <div class="top-section">
-                    <div>${model.postsArr[i]}</div>
-                    <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                    <div class="profile-section-small">
+                        <img class="pfp-small" src="images/blank-pfp.jpg">
+                        <span>${profileUsername()}</span>
+                        <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                    </div>
+
+                    <div class="my-published-post">
+                        <div>${model.postsArr[i]}</div>
+                    </div>
                 </div>
 
                 <div class="bottom-section">
-                    <div class="comment" style="display:none"></div>
+                    <div class="profile-comments" style="display:none">
+                        <span>${profileUsername()}</span>
+                        <div class="comment"></div>
+                    </div>
                     <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
                 </div>
 
@@ -314,12 +324,22 @@ function publishPost() {
             <div class="published-post">
 
                 <div class="top-section">
-                    <div>${accountPostsArr[i]}</div>
-                    <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                   <div class="profile-section-small">
+                        <img class="pfp-small" src="images/blank-pfp.jpg">
+                        <span>${profileUsername()}</span>
+                        <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                    </div>
+
+                    <div class="my-published-post">
+                        <div>${accountPostsArr[i]}</div>
+                    </div>
                 </div>
 
                 <div class="bottom-section">
-                    <div class="comment" style="display:none"></div>
+                    <div class="profile-comments" style="display:none">
+                        <span>${profileUsername()}</span>
+                        <div class="comment"></div>
+                    </div>
                     <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
                 </div>
 
@@ -334,12 +354,12 @@ function publishPost() {
     
 }
 
-function deletePost(post) {
+function deletePost(deleteIconIndex) {
     const accountPostsArr = JSON.parse(localStorage.getItem("account_posts_arr"))
 
     for (let i = deleteIcon.length; i >= 0; i--) {
 
-        if (post === deleteIcon[i]) {
+        if (deleteIconIndex === deleteIcon[i]) {
             accountPostsArr.reverse().splice([i], 1)
             accountPostsArr.reverse()
             localStorage.setItem("account_posts_arr", JSON.stringify(accountPostsArr))
@@ -354,7 +374,7 @@ function commentPost(commentFieldIndex) {
     for (let i = 0; i < commentField.length; i++) {
 
         if (commentFieldIndex === commentField[i]) {
-            comment[i].style.display = "block"
+            profileComments[i].style.display = "block"
             comment[i].innerHTML = commentField[i].value
             commentField[i].value = ""
             return 

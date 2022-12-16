@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #f0f2f5;
+    background: var(--grey1);
 }
 
 header {
@@ -15,15 +15,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: var(--white);
     height: 65px;
     padding: 0 15px;
-    box-shadow: 0px 0.1px 10px rgb(197, 197, 197);
+    box-shadow: 0px 0.1px 10px var(--grey2);
 }
 
 .logo {
-    color: #fff;
-    background: linear-gradient(to top, #1358b3, #1877f2, #71afff);
+    color: var(--white);
+    background: linear-gradient(to top, #1358b3, var(--blue), #71afff);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -39,8 +39,8 @@ header {
     width: 50px;
     border-radius: 50%;
     margin: 0;
-    border: 1px solid rgb(197, 197, 197);
-    box-shadow: 0 0.3px 5px 0.5px rgb(197, 197, 197);
+    border: 1px solid var(--grey2);
+    box-shadow: 0 0.3px 5px 0.5px var(--grey2);
     cursor: pointer;
 }
 
@@ -51,9 +51,9 @@ header {
     width: 225px;
     height: fit-content;
     padding: 8px;
-    background: #fff;
+    background: var(--white);
     border-radius: 5px;
-    box-shadow: 0 0.3px 2px 0.1px rgb(197, 197, 197);
+    box-shadow: 0 0.3px 2px 0.1px var(--grey2);
 }
 
 .logout-section {
@@ -64,20 +64,18 @@ header {
     cursor: pointer;
     font-weight: 600;
     font-size: 15px;
-    color: rgb(63, 63, 63);
 }
 
 .logout-section:hover {
-    background: rgb(243, 243, 243);
+    background: var(--white-hover);
 }
 
 i.fa-solid.fa-door-open {
     font-size: 21px;
-    background: rgb(223, 223, 223);;
+    background: var(--grey8);
     border-radius: 50%;
     padding: 7px;
     margin-right: 10px;
-    color: rgb(46, 46, 46);
 }
 
 .home-page-container {
@@ -102,7 +100,7 @@ i.fa-solid.fa-door-open {
 }
 
 .my-profile:hover {
-    background: #e0e3e7;
+    background: var(--grey1-hover);
     cursor: pointer;
 }
 
@@ -110,12 +108,12 @@ i.fa-solid.fa-door-open {
     width: 46px;
     border-radius: 50%;
     margin-right: 10px;
-    border: 1px solid rgb(197, 197, 197);
-    box-shadow: 0 0.5px 10px 1px rgb(197, 197, 197);
+    border: 1px solid var(--grey2);
+    box-shadow: 0 0.5px 10px 1px var(--grey2);
 }
 
 .profile-name-small {
-    color: rgb(63, 63, 63);
+    color: var(--grey4);
     font-size: 15px;
     font-weight: 600;
 }
@@ -123,6 +121,6 @@ i.fa-solid.fa-door-open {
 .right-section {
     flex-basis: 25%;
     margin-left: 40px;
-    background: #fff;
+    background: var(--white);
     height: 100vh;
 }

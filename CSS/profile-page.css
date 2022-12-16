@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #f0f2f5;
+    background: var(--grey1);
 }
 
 header {
@@ -15,15 +15,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: var(--white);
     height: 65px;
     padding: 0 15px;
-    box-shadow: 0px 0.1px 10px rgb(197, 197, 197);
+    box-shadow: 0px 0.1px 10px var(--grey2);
 }
 
 .logo {
-    color: #fff;
-    background: linear-gradient(to top, #1358b3, #1877f2, #71afff);
+    color: var(--white);
+    background: linear-gradient(to top, #1358b3, var(--blue), #71afff);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -39,8 +39,8 @@ header {
     width: 50px;
     border-radius: 50%;
     margin: 0;
-    border: 1px solid rgb(197, 197, 197);
-    box-shadow: 0 0.3px 5px 0.5px rgb(197, 197, 197);
+    border: 1px solid var(--grey2);
+    box-shadow: 0 0.3px 5px 0.5px var(--grey2);
     cursor: pointer;
 }
 
@@ -51,9 +51,9 @@ header {
     width: 225px;
     height: fit-content;
     padding: 8px;
-    background: #fff;
+    background: var(--white);
     border-radius: 5px;
-    box-shadow: 0 0.3px 2px 0.1px rgb(197, 197, 197);
+    box-shadow: 0 0.3px 2px 0.1px var(--grey2);
 }
 
 .logout-section {
@@ -64,38 +64,37 @@ header {
     cursor: pointer;
     font-weight: 600;
     font-size: 15px;
-    color: rgb(63, 63, 63);
+    color: var(--grey4);
 }
 
 .logout-section:hover {
-    background: rgb(243, 243, 243);
+    background: var(--white-hover);
 }
 
 i.fa-solid.fa-door-open {
     font-size: 21px;
-    background: rgb(223, 223, 223);;
+    background: var(--grey8);
     border-radius: 50%;
     padding: 7px;
     margin-right: 10px;
-    color: rgb(46, 46, 46);
 }
 
 .profile-page-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #f0f2f5;
+    background: var(--grey1);
 }
 
 .profile-section-large {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: var(--white);
     border-radius: 9px 9px 0 0;
     margin-top: 75px;
     width: 470px;
     padding: 15px 0;
-    border-bottom: 1px solid rgb(197, 197, 197);
+    border-bottom: 1px solid var(--grey2);
     word-break: break-word;
 }
 
@@ -104,8 +103,8 @@ i.fa-solid.fa-door-open {
     border-radius: 50%;
     margin-left: 25px;
     margin-right: 17px;
-    border: 2px solid rgb(197, 197, 197);
-    box-shadow: 0 0.5px 10px 1px rgb(197, 197, 197);
+    border: 2px solid var(--grey2);
+    box-shadow: 0 0.5px 10px 1px var(--grey2);
 }
 
 .profile-name-large {
@@ -117,11 +116,11 @@ i.fa-solid.fa-door-open {
 .profile-nav-section {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: var(--white);
     border-radius: 0 0 9px 9px;
     height: 30px;
     width: 470px;
-    color: rgb(126, 126, 126);
+    color: var(--grey5);
     font-weight: 600;
     font-size: 14px;
     padding: 15px 0;
@@ -133,7 +132,7 @@ i.fa-solid.fa-door-open {
 }
 
 .profile-nav:hover {
-    background: rgb(236, 236, 236);
+    background: var(--white-hover);
     padding: 15px;
     cursor: pointer;
     border-radius: 8px;
@@ -157,7 +156,7 @@ i.fa-solid.fa-door-open {
     border-radius: 9px;
     padding: 10px 25px;
     box-sizing: border-box;
-    background: #fff;
+    background: var(--white);
 }
 
 .profile-section-small {
@@ -175,7 +174,7 @@ i.fa-solid.fa-door-open {
     width: 40px;
     border-radius: 50%;
     margin-right: 10px;
-    box-shadow: 0 0.5px 5px 1px rgb(197, 197, 197);
+    box-shadow: 0 0.5px 5px 1px var(--grey2);
 }
 
 .text-area-section {
@@ -187,11 +186,11 @@ i.fa-solid.fa-door-open {
 #textArea {
     display: flex;
     justify-content: center;
-    color: rgb(63, 63, 63);
+    color: var(--grey4);
     width: 100%;
     border-radius: 10px;
     border: 0;
-    background: #f0f2f5;
+    background: var(--grey1);
     font-size: 18px;
     padding: 11px 13px;
     line-height: 20px;
@@ -200,7 +199,7 @@ i.fa-solid.fa-door-open {
 }
 
 #textArea:hover {
-    background: #ebebeb;
+    background: var(--grey1-hover);
 }
 
 .publish-btn-section {
@@ -214,47 +213,54 @@ i.fa-solid.fa-door-open {
     width: 90%;
     padding: 4px 0;
     border-radius: 5px;
-    background: #1877f2;
-    color: #fff;
+    background: var(--blue);
+    color: var(--white);
     cursor: pointer;
     font-weight: 600;
     font-size: 14px;
 }
 
 .publish-btn:hover {
-    background: #1670e6;
-    color: rgb(243, 243, 243);
+    background: var(--blue-hover);
+    color: var(--white);
 }
 
 #publishedPostSection {
     margin-top: 15px;
-    background: #fff;
+    background: var(--white);
     padding: 15px;
     border-radius: 9px;
 }
 
 .published-post {
     border-radius: 9px;
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid var(--grey2);
     padding: 15px;
     font-size: 17px;
     margin-bottom: 15px;
 }
 
 .top-section {
+    align-items: center;
+    word-break: break-word;
+    border-bottom: 1px solid var(--grey2);
+    padding-bottom: 5px;
+}
+
+.my-published-post {
     display: flex;
     align-items: center;
     justify-content: space-between;
     word-break: break-word;
-    border-bottom: 1px solid rgb(197, 197, 197);
-    padding-bottom: 5px;
+    padding: 0px 5px 3px 5px;
+    margin-top: 10px;
 }
 
 i.fa-solid.fa-trash-can {
     font-size: 16px;
-    color: rgb(117, 117, 117);
+    color: var(--grey5);
     cursor: pointer;
-    margin: 0;
+    margin-left: auto;
 }
 
 .bottom-section {
@@ -263,18 +269,23 @@ i.fa-solid.fa-trash-can {
     padding-top: 10px;
 }
 
-.comment {
-    background: #f0f2f5;
+.profile-comments {
+    background: var(--grey1);
     width: fit-content;
-    padding: 15px 15px;
-    border-radius: 50px;
+    padding: 10px 15px;
+    border-radius: 25px;
     word-break: break-word;
+}
+
+.profile-comments span {
+    font-weight: 600;
+    font-size: 12px;
 }
 
 .comment-field {
     outline: 0;
     border: 0;
-    background: #f0f2f5;
+    background: var(--grey1);
     padding: 10px;
     border-radius: 50px;
     font-size: 15px;
@@ -289,7 +300,7 @@ i.fa-solid.fa-trash-can {
 
 /* ABOUT SECTION */
 #aboutSection {
-    background: #fff;
+    background: var(--white);
     width: 470px;
     margin-top: 15px;
     border-radius: 9px;
@@ -297,8 +308,8 @@ i.fa-solid.fa-trash-can {
 
 #bioBtn {
     text-align: center;
-    background: rgb(230, 230, 230);
-    color: rgb(63, 63, 63);
+    background: var(--blue);
+    color: var(--white);
     border-radius: 5px;
     padding: 8px 0;
     margin: 15px 15px 0px 15px;
@@ -308,7 +319,7 @@ i.fa-solid.fa-trash-can {
 
 #bioBtn:hover {
     cursor: pointer;
-    background: rgb(221, 221, 221);
+    background: var(--blue-hover)
 }
 
 #bioContent {
@@ -327,39 +338,43 @@ i.fa-solid.fa-trash-can {
     font-weight: 600;
     font-size: 14px;
     padding: 10px;
-    color: rgb(63, 63, 63);
-    background: #f3f3f3;
-    border: 1px solid rgb(197, 197, 197);
+    color: var(--grey4);
+    background: var(--grey1);
+    border: 1px solid var(--grey2);
 }
 
 .bio-text-area:focus {
-    border: 1px solid #1877f2;
-    background: #fff;
-    color:rgb(63, 63, 63);
+    border: 1px solid var(--blue);
+    background: var(--white);
+    color: var(--grey4);
 }
 
 .bio-text-area::placeholder {
-    color: rgb(117, 117, 117);
+    color: var(--grey5);
 }
 
 .bio-text-area:hover {
-    background: #ebebeb;
+    background: var(--grey1-hover);
 }
 
 .bio-text-area:focus::placeholder {
-    color: #a9abad;
+    color: var(--grey6);
 }
 
 .bio-text-area:focus:hover {
-    background: #f3f3f3;
+    background: var(--white-hover);
 }
 
 i.fa-sharp.fa-solid.fa-circle-arrow-left {
     position: relative;
     bottom: 40px;
-    color: #1877f2;
+    color: var(--blue);
     font-size: 20px;
     cursor: pointer;
+}
+
+i.fa-sharp.fa-solid.fa-circle-arrow-left:hover {
+    color: var(--blue-hover);
 }
 
 .profile-info-section {
@@ -372,7 +387,7 @@ i.fa-sharp.fa-solid.fa-circle-arrow-left {
     display: flex;
     align-items: center;
     margin: 10px 0;
-    color: rgb(117, 117, 117);
+    color: var(--grey5);
 }
 
 i {
@@ -404,20 +419,20 @@ span {
 }
 
 .output-info {
-    color: rgb(63, 63, 63);
+    color: var(--grey4);
     font-weight: 600;
 }
 
 .input-info {
     outline: 0;
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid var(--grey2);
     padding: 5px;
     border-radius: 5px;
     font-size: 15px;
 }
 
 .input-info:focus {
-    border: 1px solid #1877f2;
+    border: 1px solid var(--blue);
 }
 
 i.fa-solid.fa-pen {

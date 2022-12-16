@@ -12,13 +12,12 @@ function loginView() {
         <div class="login-section">
 
             <div class="login-input-section">
-                <input class="login-input" type="text" maxlength="35" placeholder="Username" onchange="loginUsername(this.value)">
+                <input class="login-input" type="text" maxlength="34" placeholder="Username" onchange="loginUsername(this.value)">
                 <input class="login-input" type="password" maxlength="55" placeholder="Password" onchange="loginPassword(this.value)">
             </div>
 
             <div class="login-btn-section">
                 <button class="login-btn" onclick="loginAccount()">Login</button>
-                <a onclick="console.log('In progress... 😄')">Forgot password?</a>
             </div>
 
             <div class="create-account-section">
@@ -53,7 +52,7 @@ function registerView() {
 
 
             <div class="register-input-section">
-                <input class="register-input" type="text" maxlength="35" placeholder="Choose username" onchange="createUsername(this.value)">
+                <input class="register-input" type="text" maxlength="34" placeholder="Choose username" onchange="createUsername(this.value)">
                 <input class="register-input" type="password" maxlength="55" placeholder="Choose password" onchange="createPassword(this.value)">
             </div>
 
