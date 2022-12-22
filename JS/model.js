@@ -7,14 +7,27 @@ const model = {
         register: false
     },
 
+    account: {
+        username: "",
+        password: ""
+    },
+
     account_login: {
         username: false,
         password: false,
         login: false
     },
 
+    account_info: {
+        place_of_residence: "",
+        from: "",
+        university_college: "",
+        workplace: ""
+    },
+
     postsArr: []
 }
+
 
 // Classes
 const publishedPost = document.getElementsByClassName("published-post")

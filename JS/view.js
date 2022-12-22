@@ -52,8 +52,8 @@ function registerView() {
 
 
             <div class="register-input-section">
-                <input class="register-input" type="text" maxlength="34" placeholder="Choose username" onchange="createUsername(this.value)">
-                <input class="register-input" type="password" maxlength="55" placeholder="Choose password" onchange="createPassword(this.value)">
+                <input class="register-input" type="text" maxlength="34" placeholder="Choose username" onchange="createUsername(this.value)" value="${model.create_account.username}">
+                <input class="register-input" type="password" maxlength="55" placeholder="Choose password" onchange="createPassword(this.value)" value="${model.create_account.password}">
             </div>
 
             <div class="register-btn-section">
@@ -97,7 +97,7 @@ function homePageView() {
 
                 <div class="my-profile" onclick="profilePage()">
                     <img class="pfp-small" src="images/blank-pfp.jpg">
-                    <span class="profile-name-small">${profileUsername()}</span>
+                    <span class="profile-name-small">${model.account.username}</span>
                 </div>
 
             </div>
@@ -134,17 +134,17 @@ function profilePageView() {
 
             <div class="profile-section-large">
                 <img class="pfp-large" src="images/blank-pfp.jpg">
-                <h1 class="profile-name-large">${profileUsername()}</h1>
+                <h1 class="profile-name-large">${model.account.username}</h1>
             </div>
 
 
 
             <div class="profile-nav-section">
-                <div class="profile-nav" onclick="displaySection1()">
+                <div class="profile-nav" onclick="displayPostsSection()">
                     <span>Posts</span>
                 </div>
 
-                <div class="profile-nav" onclick="displaySection2()">
+                <div class="profile-nav" onclick="displayAboutSection()">
                     <span>About</span>
                 </div>
             </div>
@@ -157,7 +157,7 @@ function profilePageView() {
 
                     <div class="profile-section-small">
                         <img class="pfp-small" src="images/blank-pfp.jpg">
-                        <span>${profileUsername()}</span>
+                        <span>${model.account.username}</span>
                     </div>
 
 
@@ -182,48 +182,37 @@ function profilePageView() {
 
             <div id="aboutSection" style="display:none">
 
-                <div id="bioBtn" onclick="switchBioDisplay()">
-                    <span>Bio</span>
-                </div>
-
-                <div id="bioContent" style="display:none">
-                    <i class="fa-sharp fa-solid fa-circle-arrow-left" onclick="switchBioDisplay()"></i>
-                    <textarea class="bio-text-area" maxlength="99" placeholder="Describe yourself" onfocusout="saveBioInput(this.value)">${bio()}</textarea>
-                </div>
-
-
-
                 <div class="profile-info-section">
 
                     <div class="profile-info">
                         <i class="fa-solid fa-house"></i>
                         <span>Place of residence:</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${placeOfResidence()}" maxlength="19" autocomplete="off">
-                        <span class="output-info" onclick="changeInput(this)">${placeOfResidence()}</span>
+                        <input class="input-info" type="text" style="display:none" onchange="saveInfo(this, this.value)" value="${model.account_info.place_of_residence}" maxlength="19" autocomplete="off">
+                        <span class="output-info">${model.account_info.place_of_residence}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                     <div class="profile-info">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>From</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${from()}" maxlength="19" autocomplete="off">
-                        <span class="output-info" onclick="changeInput(this)">${from()}</span>
+                        <input class="input-info" type="text" style="display:none" onchange="saveInfo(this, this.value)" value="${model.account_info.from}" maxlength="19" autocomplete="off">
+                        <span class="output-info">${model.account_info.from}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                     <div class="profile-info">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>University/College:</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${universityCollege()}" maxlength="19" autocomplete="off">
-                        <span class="output-info" onclick="changeInput(this)">${universityCollege()}</span>
+                        <input class="input-info" type="text" style="display:none" onchange="saveInfo(this, this.value)" value="${model.account_info.university_college}" maxlength="19" autocomplete="off">
+                        <span class="output-info">${model.account_info.university_college}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
                     <div class="profile-info">
                         <i class="fa-solid fa-briefcase"></i>
                         <span>Workplace:</span>
-                        <input class="input-info" type="text" style="display:none" onchange="saveInput(this, this.value)" value="${workplace()}" maxlength="19" autocomplete="off">
-                        <span class="output-info" onclick="changeInput(this)">${workplace()}</span>
+                        <input class="input-info" type="text" style="display:none" onchange="saveInfo(this, this.value)" value="${model.account_info.workplace}" maxlength="19" autocomplete="off">
+                        <span class="output-info">${model.account_info.workplace}</span>
                         <i class="fa-solid fa-pen" onclick="editInfo(this)"></i>
                     </div>
 
