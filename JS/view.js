@@ -174,7 +174,40 @@ function profilePageView() {
 
                 </div>
 
-                <div id="publishedPostSection" style="display:none"></div>
+                <div id="publishedPostSection" style="display:block">`
+
+                const accountPosts = JSON.parse(localStorage.getItem("account_posts"))
+                for (let i = accountPosts.length - 1; i >= 0; i--) {
+                    console.log(test[i])
+                    html += `
+                    <div class="published-post">
+        
+                        <div class="top-section">
+                            <div class="profile-section-small">
+                                <img class="pfp-small" src="images/blank-pfp.jpg">
+                                <span>${model.account.username}</span>
+                                <i class="fa-solid fa-trash-can" onclick="deletePost(this)"></i>
+                            </div>
+        
+                            <div class="my-published-post">
+                                <div>${accountPosts[i]}</div>
+                            </div>
+                        </div>
+        
+                        <div class="bottom-section">
+                            <div class="profile-comments" style="display:block">
+                                <span>${model.account.username}</span>
+                                <i class="fa-regular fa-trash-can" onclick="deleteComment(this)"></i>
+                                <div class="comment">${test[i]}</div>
+                            </div>
+                            <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
+                        </div>
+        
+                    </div>
+                    `
+                }
+
+                html += `</div>
 
             </div>
 

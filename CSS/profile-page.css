@@ -282,6 +282,12 @@ i.fa-solid.fa-trash-can {
     font-size: 12px;
 }
 
+i.fa-regular.fa-trash-can {
+    font-size: 14px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .comment-field {
     outline: 0;
     border: 0;

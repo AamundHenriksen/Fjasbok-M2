@@ -76,6 +76,7 @@ function loginAccount() {
         model.account_login.login = true
 
         if (model.account_login.login) {
+            //localStorage.setItem("account_comments", JSON.stringify(model.commentsArr))
             return homePage()
         }
     }
@@ -184,7 +185,7 @@ function logoutAccount() {
 }
 
 // Publish post
-function publishPost() {
+/*function publishPost() {
     if (!textArea.value) { return }
 
         model.postsArr.push(textArea.value)
@@ -210,6 +211,7 @@ function publishPost() {
                 <div class="bottom-section">
                     <div class="profile-comments" style="display:none">
                         <span>${model.account.username}</span>
+                        <i class="fa-regular fa-trash-can" onclick="deleteComment(this)"></i>
                         <div class="comment"></div>
                     </div>
                     <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
@@ -218,33 +220,60 @@ function publishPost() {
             </div>
             `
         }
-
+        
         publishedPostSection.innerHTML = myPosts
         publishedPostSection.style.display = "block"
         return 
+}*/
+
+function publishPost() {
+    if (!textArea.value) { return }
+
+    if (!localStorage["account_posts"]) {
+        model.postsArr.push(textArea.value)
+        textArea.value = ""
+        localStorage.setItem("account_posts", JSON.stringify(model.postsArr))
+        updateView()
+    }
+
+    const accountPosts = JSON.parse(localStorage.getItem("account_posts"))
+    accountPosts.push(textArea.value)
+    textArea.value = ""
+    localStorage.setItem("account_posts", JSON.stringify(accountPosts))
+    updateView()
 }
 
 function deletePost(element) {
-    for (let i = deleteIcon.length; i >= 0; i--) {
+    const accountPosts = JSON.parse(localStorage.getItem("account_posts"))
+    for (let i = deleteIcon1.length; i >= 0; i--) {
 
-        if (element === deleteIcon[i]) {
-            model.postsArr.reverse().splice(i, 1)
-            model.postsArr.reverse()
+        if (element === deleteIcon1[i]) {
+            accountPosts.reverse().splice(i, 1)
+            accountPosts.reverse()
             publishedPost[i].remove()
+            localStorage.setItem("account_posts", JSON.stringify(accountPosts))
         }
     }
 
-    if (model.postsArr.length === 0) { return publishedPostSection.style.display = "none"}
+    if (accountPosts.length === 0) { return publishedPostSection.style.display = "none"}
 }
 
 function commentPost(element) {
     for (let i = 0; i < commentField.length; i++) {
 
         if (element === commentField[i]) {
-            profileComments[i].style.display = "block"
-            comment[i].innerHTML = commentField[i].value
-            commentField[i].value = ""
-            return 
+            test.reverse().splice(i, 1, commentField[i].value)
+            test.reverse()
+            updateView()
+        }
+    }
+}
+
+function deleteComment(element) {
+    for (let i = 0; i < deleteIcon2.length; i++) {
+
+        if (element === deleteIcon2[i]) {
+            profileComments[i].style.display = "none"
         }
     }
 }
