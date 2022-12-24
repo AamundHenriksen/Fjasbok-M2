@@ -176,9 +176,8 @@ function profilePageView() {
 
                 <div id="publishedPostSection" style="display:block">`
 
-                const accountPosts = JSON.parse(localStorage.getItem("account_posts"))
-                for (let i = accountPosts.length - 1; i >= 0; i--) {
-                    console.log(test[i])
+                for (let i = model.postsArr.length - 1; i >= 0; i--) {
+
                     html += `
                     <div class="published-post">
         
@@ -190,15 +189,15 @@ function profilePageView() {
                             </div>
         
                             <div class="my-published-post">
-                                <div>${accountPosts[i]}</div>
+                                <div>${model.postsArr[i]}</div>
                             </div>
                         </div>
         
                         <div class="bottom-section">
-                            <div class="profile-comments" style="display:block">
+                            <div class="profile-comments" style="display:none">
                                 <span>${model.account.username}</span>
                                 <i class="fa-regular fa-trash-can" onclick="deleteComment(this)"></i>
-                                <div class="comment">${test[i]}</div>
+                                <div>${model.commentsArr[i]}</div>
                             </div>
                             <input class="comment-field" type="text" placeholder="Write a comment..." onchange="commentPost(this)" maxlength="410">
                         </div>
