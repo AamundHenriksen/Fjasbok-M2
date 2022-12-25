@@ -168,6 +168,7 @@ i.fa-solid.fa-door-open {
 .profile-section-small span {
     font-size: 13px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .pfp-small {
@@ -175,6 +176,7 @@ i.fa-solid.fa-door-open {
     border-radius: 50%;
     margin-right: 10px;
     box-shadow: 0 0.5px 5px 1px var(--grey2);
+    cursor: pointer;
 }
 
 .text-area-section {
@@ -243,7 +245,6 @@ i.fa-solid.fa-door-open {
 .top-section {
     align-items: center;
     word-break: break-word;
-    border-bottom: 1px solid var(--grey2);
     padding-bottom: 5px;
 }
 
@@ -253,7 +254,7 @@ i.fa-solid.fa-door-open {
     justify-content: space-between;
     word-break: break-word;
     padding: 0px 5px 3px 5px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 i.fa-solid.fa-trash-can {
@@ -261,43 +262,6 @@ i.fa-solid.fa-trash-can {
     color: var(--grey5);
     cursor: pointer;
     margin-left: auto;
-}
-
-.bottom-section {
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-}
-
-.profile-comments {
-    background: var(--grey1);
-    width: fit-content;
-    padding: 10px 15px;
-    border-radius: 25px;
-    word-break: break-word;
-}
-
-.profile-comments span {
-    font-weight: 600;
-    font-size: 12px;
-}
-
-i.fa-regular.fa-trash-can {
-    font-size: 14px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.comment-field {
-    outline: 0;
-    border: 0;
-    background: var(--grey1);
-    padding: 10px;
-    border-radius: 50px;
-    font-size: 15px;
-    margin-top: 10px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 
@@ -310,77 +274,6 @@ i.fa-regular.fa-trash-can {
     width: 470px;
     margin-top: 15px;
     border-radius: 9px;
-}
-
-#bioBtn {
-    text-align: center;
-    background: var(--blue);
-    color: var(--white);
-    border-radius: 5px;
-    padding: 8px 0;
-    margin: 15px 15px 0px 15px;
-    font-weight: 600;
-    font-size: 15px;
-}
-
-#bioBtn:hover {
-    cursor: pointer;
-    background: var(--blue-hover)
-}
-
-#bioContent {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.bio-text-area {
-    width: 64%;
-    text-align: center;
-    margin-right: 35px;
-    line-height: 17px;
-    resize: none;
-    outline: none;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px;
-    color: var(--grey4);
-    background: var(--grey1);
-    border: 1px solid var(--grey2);
-}
-
-.bio-text-area:focus {
-    border: 1px solid var(--blue);
-    background: var(--white);
-    color: var(--grey4);
-}
-
-.bio-text-area::placeholder {
-    color: var(--grey5);
-}
-
-.bio-text-area:hover {
-    background: var(--grey1-hover);
-}
-
-.bio-text-area:focus::placeholder {
-    color: var(--grey6);
-}
-
-.bio-text-area:focus:hover {
-    background: var(--white-hover);
-}
-
-i.fa-sharp.fa-solid.fa-circle-arrow-left {
-    position: relative;
-    bottom: 40px;
-    color: var(--blue);
-    font-size: 20px;
-    cursor: pointer;
-}
-
-i.fa-sharp.fa-solid.fa-circle-arrow-left:hover {
-    color: var(--blue-hover);
 }
 
 .profile-info-section {

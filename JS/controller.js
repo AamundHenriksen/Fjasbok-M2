@@ -5,8 +5,6 @@ function loginPage() {
 
 function registerPage() {
     model.currentPage = "register"
-    model.account_login.username = false
-    model.account_login.password = false
     updateView()
 }
 
@@ -15,8 +13,23 @@ function homePage() {
     updateView()
 }
 
-function profilePage() {
-    model.currentPage = "profile"
+function myProfilePage() {
+    model.currentPage = "my-profile"
+    updateView()
+}
+
+function hermanProfilePage() {
+    model.currentPage = "herman-profile"
+    updateView()
+}
+
+function pederProfilePage() {
+    model.currentPage = "peder-profile"
+    updateView()
+}
+
+function sondreProfilePage() {
+    model.currentPage = "sondre-profile"
     updateView()
 }
 
@@ -29,7 +42,13 @@ function updateView() {
 
     : model.currentPage === "home" ? homePageView()
 
-    : model.currentPage === "profile" ? profilePageView()
+    : model.currentPage === "my-profile" ? myProfilePageView()
+
+    : model.currentPage === "herman-profile" ? hermanProfilePageView()
+
+    : model.currentPage === "peder-profile" ? pederProfilePageView()
+
+    : model.currentPage === "sondre-profile" ? sondreProfilePageView()
     
     : console.log("ERROR: Page doesn't exist.")
 }
@@ -54,30 +73,26 @@ function displayAboutSection() {
 
 // Username
 function loginUsername(inputUsername) {
-        if (inputUsername === model.account.username) {
-            return model.account_login.username = true
+        if (inputUsername === account[0].username) {
+            return model.login_page_input.username = true
         }
 
-    return model.account_login.username = false
+    return model.login_page_input.username = false
 }
 
 // Password
 function loginPassword(inputPassword) {
-        if (inputPassword === model.account.password) {
-            return model.account_login.password = true
+        if (inputPassword === account[0].password) {
+            return model.login_page_input.password = true
         }
 
-    return model.account_login.password = false
+    return model.login_page_input.password = false
 }
 
 // Login
 function loginAccount() {
-    if (model.account_login.username && model.account_login.password) {
-        model.account_login.login = true
-
-        if (model.account_login.login) {
-            return homePage()
-        }
+    if (model.login_page_input.username && model.login_page_input.password === true) {
+        return homePage()
     }
 
     return console.log("Incorrect username/password.")
@@ -87,38 +102,37 @@ function loginAccount() {
 function createUsername(inputUsername) {
     
     if (!inputUsername) {
-        console.log("Empty name is not valid.")
-        return model.create_account.username = ""
+        console.log("Empty username is not valid.")
+        return model.register_page_input.username = ""
     }
     
-    return model.create_account.username = inputUsername
+    return model.register_page_input.username = inputUsername
 }
 
 // Create password
 function createPassword(inputPassword) {
     if (!inputPassword) {
         console.log("Empty password is not valid.")
-        return model.create_account.password = ""
+        return model.register_page_input.password = ""
     }
     
-    return model.create_account.password = inputPassword
+    return model.register_page_input.password = inputPassword
 }
 
 // Register account
 function registerAccount() {
-    if (model.create_account.username && model.create_account.password) {
-        model.create_account.register = true
+    if (model.register_page_input.username && model.register_page_input.password) {
 
-        if (model.create_account.register) {
-            model.account.username = model.create_account.username
-            model.account.password = model.create_account.password
+            account[0].username = model.register_page_input.username
+            account[0].password = model.register_page_input.password
             loginPage()
 
-            // Clearing the inputs after the account is created
-            model.create_account.username = ""
-            model.create_account.password = ""
-        }
+            model.register_page_input.username = ""
+            model.register_page_input.password = ""
+            return
     }
+
+    return console.log("Empty username/password is not valid")
 }
 
 // Save info
@@ -132,13 +146,13 @@ function saveInfo(element, inputValue) {
 
             outputInfo[i].innerHTML = inputValue
 
-            i === 0 ? model.account_info.place_of_residence = inputValue
+            i === 0 ? account[0].place_of_residence = inputValue
 
-            : i === 1 ? model.account_info.from = inputValue
+            : i === 1 ? account[0].from = inputValue
 
-            : i === 2 ? model.account_info.university_college = inputValue
+            : i === 2 ? account[0].university_college = inputValue
 
-            : i === 3 ? model.account_info.workplace = inputValue
+            : i === 3 ? account[0].workplace = inputValue
             
             : ""
         }
@@ -187,44 +201,19 @@ function logoutAccount() {
 function publishPost() {
     if (!textArea.value) { return }
 
-        model.postsArr.push(textArea.value)
+        account[0].posts_arr.push(textArea.value)
         textArea.value = ""
-        model.commentsArr.length = model.postsArr.length
         updateView()
 }
 
+// Delete post
 function deletePost(element) {
-    for (let i = deleteIcon1.length; i >= 0; i--) {
+    for (let i = deleteIcon.length; i >= 0; i--) {
 
-        if (element === deleteIcon1[i]) {
-            model.postsArr.reverse().splice(i, 1)
-            model.postsArr.reverse()
+        if (element === deleteIcon[i]) {
+            account[0].posts_arr.reverse().splice(i, 1)
+            account[0].posts_arr.reverse()
             publishedPost[i].remove()
-            model.commentsArr.length = model.postsArr.length
-        }
-    }
-
-    if (model.postsArr.length === 0) { return publishedPostSection.style.display = "none"}
-}
-
-function commentPost(element) {
-
-    for (let i = 0; i < commentField.length; i++) {
-
-        if (element === commentField[i]) {
-            model.commentsArr.reverse().splice(i, 1, commentField[i].value)
-            model.commentsArr.reverse()
-            updateView()
-            profileComments[i].style.display = "block"
         }
     }
 }
-
-/*function deleteComment(element) {
-    for (let i = 0; i < deleteIcon2.length; i++) {
-
-        if (element === deleteIcon2[i]) {
-            // In progress
-        }
-    }
-}*/

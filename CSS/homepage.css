@@ -91,15 +91,16 @@ i.fa-solid.fa-door-open {
     margin-top: 15px;
 }
 
-.my-profile {
+.profiles {
     display: flex;
     align-items: center;
     width: 100%;
     padding: 6px;
     border-radius: 7px;
+    margin-bottom: 10px;
 }
 
-.my-profile:hover {
+.profiles:hover {
     background: var(--grey1-hover);
     cursor: pointer;
 }
@@ -123,4 +124,5 @@ i.fa-solid.fa-door-open {
     margin-left: 40px;
     background: var(--white);
     height: 100vh;
+    padding: 15px;
 }
