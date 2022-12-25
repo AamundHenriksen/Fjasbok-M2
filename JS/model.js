@@ -61,8 +61,3 @@ const inputInfo = document.getElementsByClassName("input-info")
 const outputInfo = document.getElementsByClassName("output-info")
 const editIcon = document.getElementsByClassName("fa-solid fa-pen")
 
-// ID
-const postsSection = document.getElementById("postsSection")
-const aboutSection = document.getElementById("aboutSection")
-const publishedPostSection = document.getElementById("publishedPostSection")
-
